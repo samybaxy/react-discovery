@@ -8,7 +8,8 @@ function Product() {
     const url = `https://5fc59f034931580016e3bf0d.mockapi.io/api/v1/products/${id}`;
     const [product, setProduct] = useState({
         loading: false,
-        data: null
+        data: null,
+        error: false
     });
 
     let content = null;
@@ -16,17 +17,33 @@ function Product() {
     useEffect(() => {
         setProduct({
             loading: true,
-            data: null
+            data: null,
+            error: false
         })
         axios.get(url)
             .then(response => {
                 setProduct({
                     loading: false,
-                    data: response.data
+                    data: response.data,
+                    error: false
+                })
+            })
+            .catch(() => {
+                setProduct({
+                    loading: false,
+                    data: null,
+                    error: true
                 })
             })
 
     }, [url] );
+
+    if (product.error) {
+        content = 
+        <p>
+            No data found for id: {id}
+        </p>
+    }
 
     if (product.loading) {
         content = <Loader />
