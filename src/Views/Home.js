@@ -60,7 +60,7 @@ function Home() {
 
     return (
         <div>
-            <h1 className="font-bold text-2xl mb-3">
+            <h1 className="font-bold text-2xl mb-1">
                 Best Sellers
             </h1>
             {content}

@@ -11,29 +11,31 @@ import About from './Views/About';
 import Product from './Views/Product';
 
 function App() {
-  return (
-    <Router>
-		<Header />
+	return (
+		<div className="relative pb-10 min-h-screen">
+			<Router>
+				<Header />
 
-		<div className="p-3">
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
-				
-				<Route path="/about">
-					<About />
-				</Route>
+				<div className="p-3">
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						
+						<Route path="/about">
+							<About />
+						</Route>
 
-				<Route path="/products/:id">
-					<Product />
-				</Route>
-			</Switch>
+						<Route path="/products/:id">
+							<Product />
+						</Route>
+					</Switch>
+				</div>
+
+				<Footer />
+			</Router>
 		</div>
-
-		<Footer />
-    </Router>
-  );
+	);
 }
 
 export default App;
