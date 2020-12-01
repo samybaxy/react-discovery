@@ -2,6 +2,7 @@ import Navigation from "./Navigation"
 import { Link } from 'react-router-dom';
 
 function NavigationMenu(props) {
+
     return (
         <div>
             <div className="font-bold py-3">React-Discovery</div>
@@ -20,14 +21,6 @@ function NavigationMenu(props) {
                         className="text-blue-500 py-3 border-b block"
                         onClick={props.closeMenu}
                     >About</Link>
-                </li>
-
-                <li>
-                    <Link 
-                        to="/product"
-                        className="text-blue-500 py-3 border-b block"
-                        onClick={props.closeMenu}
-                    >Product</Link>
                 </li>
             </ul>
         </div>
